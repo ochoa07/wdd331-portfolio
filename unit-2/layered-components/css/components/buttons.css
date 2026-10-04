@@ -1,0 +1,49 @@
+/* Button components: .btn, .primary, .secondary, disabled state
+   Use native nesting for pseudo-classes and modifiers. */
+
+/* TODO: Style the button components */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.btn {
+  padding: var(--space-sm) var(--space-md);
+  border: var(--border-width) solid var(--color-primary);
+  border-radius: var(--radius);
+  font: inherit;
+  white-space: normal;
+
+  &.primary {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+  }
+
+  &.secondary {
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-surface);
+    }
+  }
+
+  &:disabled {
+    background-color: var(--color-background);
+    border-color: var(--color-border);
+    color: var(--color-muted);
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: var(--focus-width) solid var(--color-focus);
+    outline-offset: var(--focus-offset);
+  }
+}

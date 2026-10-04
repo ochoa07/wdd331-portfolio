@@ -1,0 +1,53 @@
+/* Form components: .note-form, .form-field, inputs, textarea, select
+   Use native nesting. Add :focus-visible styles to all inputs. */
+
+/* TODO: Style the form components */
+.note-form {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+
+  .form-field {
+    display: grid;
+    gap: var(--space-sm);
+
+    label {
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+
+    :is(input, textarea, select) {
+      width: 100%;
+      min-width: 0;
+      padding: var(--space-sm) var(--space-md);
+      background-color: var(--color-surface);
+      color: var(--color-text);
+      border: var(--border-width) solid var(--color-muted);
+      border-radius: var(--radius);
+      font: inherit;
+
+      &:focus-visible {
+        outline: var(--focus-width) solid var(--color-focus);
+        outline-offset: var(--focus-offset);
+      }
+    }
+
+    :is(input, textarea) {
+      &::placeholder {
+        color: var(--color-muted);
+        opacity: 1;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  .btn {
+    justify-self: start;
+  }
+}
