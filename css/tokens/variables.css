@@ -1,0 +1,13 @@
+:root {
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    --font-body: system-ui, -apple-system, sans-serif;
+    --font-heading: Georgia, "Times New Roman", serif;
+    --text-title: clamp(2.4rem, 7vw, 4.5rem);
+
+    --radius-card: 1.5rem;
+    --shadow-card: 0 12px 35px rgb(36 62 72 / 8%);
+}

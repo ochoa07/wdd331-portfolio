@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #faf8ff;
+  color: #30283e;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding-block: 1rem;
+  background: #eee7fa;
+}
+
+.brand {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navigation a {
+  color: #59417e;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.navigation a:focus-visible {
+  outline: 3px solid #59417e;
+  outline-offset: 4px;
+}
+
+.intro {
+  padding-block: 3rem;
+}
+
+.eyebrow {
+  color: #705193;
+  font-weight: bold;
+}
+
+h1 {
+  max-width: 700px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid #dcd1ed;
+  border-radius: 12px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #59417e;
+}
+
+.takeaway {
+  margin-block: 3rem;
+  padding: 1.5rem;
+  background: #eee7fa;
+  border-radius: 12px;
+}
+
+/* The navigation changes at this breakpoint. */
+@media (--medium) {
+  .navigation {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+/* The cards repeat the same breakpoint. */
+@media (--medium) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* A larger breakpoint adds a third column. */
+@media (--large) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.video-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #eee7fa;
+  color: #59417e;
+  border: 1px solid #dcd1ed;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.video-button:hover {
+  background-color: #dcd1ed;
+}
+
+.video-button:focus-visible {
+  outline: 3px solid #59417e;
+  outline-offset: 4px;
+}

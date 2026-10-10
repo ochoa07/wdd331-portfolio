@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Media Demo</title>
+  <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="brand">Chelsea’s Demo</p>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#examples">Examples</a>
+        <a href="#takeaway">Takeaway</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="intro">
+      <p class="eyebrow">CSS Custom Media</p>
+      <h1>One breakpoint. Multiple components.</h1>
+      <p>
+        Resize the page to see the navigation and cards change
+        their layout.
+      </p>
+    </section>
+
+    <section id="examples" aria-labelledby="examples-heading">
+      <h2 id="examples-heading">Why use custom media?</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Reuse a query</h3>
+          <p>Use the same name in different parts of your CSS.</p>
+        </article>
+
+        <article class="card">
+          <h3>Change one value</h3>
+          <p>Update the definition and rebuild your stylesheet.</p>
+        </article>
+
+        <article class="card">
+          <h3>Read clear names</h3>
+          <p>A name helps explain the purpose of a media query.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="takeaway" class="takeaway">
+      <h2>The main idea</h2>
+      <p>
+        Define the query once, reuse its name, and let the build
+        tool generate regular CSS.
+      </p>
+    </section>
+    <a
+      href="https://youtu.be/i2o2dx7oGhk"
+      class="video-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Watch my teaching video
+    </a>
+  </main>
+
+</body>
+</html>

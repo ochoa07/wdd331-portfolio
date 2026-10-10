@@ -1,0 +1,38 @@
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.7;
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--text-title);
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+p {
+    color: var(--color-muted);
+}
+
+a {
+    color: var(--color-primary);
+    text-underline-offset: 0.25em;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 5px;
+}
