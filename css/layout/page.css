@@ -1,0 +1,18 @@
+body {
+    padding: var(--space-lg) var(--space-md);
+}
+
+main {
+    max-width: 60rem;
+    margin-inline: auto;
+}
+
+main > * + * {
+    margin-top: var(--space-lg);
+}
+
+@media (min-width: 48rem) {
+    body {
+        padding: var(--space-xl) var(--space-lg);
+    }
+}

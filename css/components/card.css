@@ -1,0 +1,76 @@
+.hero,
+.portfolio-card {
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+}
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        var(--color-border),
+        var(--color-bg) 65%,
+        var(--color-accent)
+    );
+}
+
+.hero > * + * {
+    margin-top: var(--space-md);
+}
+
+.hero .eyebrow {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero p {
+    max-width: 38rem;
+}
+
+.portfolio-card {
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+}
+
+.portfolio-card > * + * {
+    margin-top: var(--space-md);
+}
+
+.assignment-list {
+    display: grid;
+    gap: var(--space-md);
+    list-style: none;
+}
+
+.assignment-list a {
+    display: block;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    text-decoration: none;
+}
+
+.assignment-list a:hover {
+    background-color: var(--color-bg);
+    border-color: var(--color-primary);
+}
+
+.assignment-list strong,
+.assignment-list span {
+    display: block;
+}
+
+.assignment-list span {
+    margin-top: var(--space-sm);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+@media (min-width: 40rem) {
+    .assignment-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

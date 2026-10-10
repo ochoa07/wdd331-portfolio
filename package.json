@@ -1,0 +1,24 @@
+{
+  "name": "wdd331-portfolio",
+  "version": "1.0.0",
+  "description": "**Student:** CHELSEA OCHOA MATA\r **Semester:** Fall 2026\r **Live Site:** [View Site](https://ochoa07.github.io/wdd331-portfolio/)\r ## About\r This repository is my portfolio for WDD 331R: Advanced CSS.\r Each week I add new pages and styles as I work through the course\r assignments. The site deploys automatically to GitHub Pages on\r every push to main.\r ## Pages\r - [Home](index.html)\r - [Custom Properties and Nesting](unit-1/custom-properties/index.html)\r - [Layered Components](https://ochoa07.github.io/wdd331-portfolio/unit-2/layered-components/index.html)",
+  "main": "index.js",
+  "scripts": {
+    "build": "lightningcss --bundle --minify css/main.css -o dist/styles.css"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ochoa07/wdd331-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ochoa07/wdd331-portfolio/issues"
+  },
+  "homepage": "https://github.com/ochoa07/wdd331-portfolio#readme",
+  "devDependencies": {
+    "lightningcss-cli": "^1.33.0"
+  }
+}

@@ -3,38 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chelsea Ochoa - Portfolio</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <title>Chelsea Ochoa Mata | Advanced CSS Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <main>
-        <h1>Chelsea Ochoa Mata</h1>
+   <main>
+        <header class="hero">
+            <p class="eyebrow">A little of what I’m learning</p>
 
-        <p>
-            Hi! I’m Chelsea, a Software Engineering student at BYU–Idaho with an
-            interest in full-stack web development.
-        </p>
+            <h1>Hi, I’m Chelsea</h1>
 
-        <p>
-            This portfolio contains the pages and CSS projects I will create
-            throughout WDD 331R: Advanced CSS.
-        </p>
+            <p>
+                I’m Chelsea Ochoa Mata, a Software Engineering student
+                at BYU–Idaho. I like making websites that look good
+                and feel easy to use.
+            </p>
 
-        <nav aria-label="Assignments">
-            <h2>Assignments</h2>
-            <ul>
+            <p>
+                This is my portfolio for WDD 331R Advanced CSS.
+                Each project is a chance to try something new
+                and make it my own.
+            </p>
+        </header>
+
+        <nav class="portfolio-card" aria-labelledby="assignments-title">
+            <h2 id="assignments-title">What I’ve been working on</h2>
+
+            <p>Small projects, new ideas, and practice along the way.</p>
+
+            <ul class="assignment-list">
                 <li>
                     <a href="unit-1/custom-properties/index.html">
-                        Custom Properties and Nesting
+                        <strong>Custom Properties and Nesting</strong>
+                        <span>
+                            Working with colors, spacing, and reusable styles.
+                        </span>
                     </a>
                 </li>
+
                 <li>
                     <a href="unit-2/layered-components/index.html">
-                        Layered Components
+                        <strong>Layered Components</strong>
+                        <span>
+                            Giving each style a place and bringing it all together.
+                        </span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="unit-2/custom-media/index.html">
+                        <strong>Custom Media Queries</strong>
+                        <span>Using named breakpoints for responsive styles.</span>
+                    </a>
+                </li>
+
             </ul>
         </nav>
+
+        <footer class="text-center">
+            <p>Chelsea Ochoa Mata · WDD 331R Advanced CSS</p>
+        </footer>
     </main>
 </body>
 </html>
