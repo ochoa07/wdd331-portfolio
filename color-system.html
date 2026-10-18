@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenized Color System | Chelsea Ochoa Mata</title>
+    <script src="js/theme-preference.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <header class="hero">
+            <div class="theme-toolbar">
+                <details class="theme-menu">
+                    <summary class="theme-control">
+                        <span class="visually-hidden">Color scheme</span>
+                    </summary>
+
+                    <div class="theme-extra"
+                         role="group"
+                         aria-label="Choose color scheme">
+                        <label class="theme-control theme-pick"
+                               data-theme-pick="light">
+                            <input name="theme-preference"
+                                   type="radio"
+                                   value="light">
+                            <span aria-hidden="true">&#9788;&#65039;</span>
+                            <span class="visually-hidden">Light</span>
+                        </label>
+
+                        <label class="theme-control theme-pick"
+                               data-theme-pick="system">
+                            <input name="theme-preference"
+                                   type="radio"
+                                   value="system"
+                                   checked>
+                            <span aria-hidden="true">&#9881;&#65039;</span>
+                            <span class="visually-hidden">System default</span>
+                        </label>
+
+                        <label class="theme-control theme-pick"
+                               data-theme-pick="dark">
+                            <input name="theme-preference"
+                                   type="radio"
+                                   value="dark">
+                            <span aria-hidden="true">&#127766;</span>
+                            <span class="visually-hidden">Dark</span>
+                        </label>
+                    </div>
+                </details>
+            </div>
+
+            <p class="eyebrow">WDD 331R · Advanced CSS</p>
+
+            <h1>My Color System</h1>
+
+            <p>
+                This page uses the same color tokens as my homepage.
+                I can switch between light, dark, and my computer’s
+                default theme.
+            </p>
+
+            <p>
+                My theme choice stays saved when I refresh
+                or visit another page.
+            </p>
+
+            <p>
+                <a href="index.html">Back to home</a>
+            </p>
+        </header>
+
+        <section class="portfolio-card" aria-labelledby="colors-title">
+            <h2 id="colors-title">How my colors work</h2>
+
+            <p>
+                My starting colors are defined in
+                <code>css/tokens/colors.css</code>.
+                I use a teal accent with lighter and darker versions
+                made from the same color.
+            </p>
+
+            <p>
+                Shared tokens control the backgrounds, text, links,
+                and borders. Each token has a light and dark value,
+                so both pages change together.
+            </p>
+        </section>
+
+        <section class="portfolio-card" aria-labelledby="testing-title">
+            <h2 id="testing-title">Try the theme</h2>
+
+            <p>
+                Use the theme button at the top to choose a mode.
+                Then visit the homepage or refresh this page
+                to check that your choice stays saved.
+            </p>
+
+            <p>
+                System default follows your computer’s color setting.
+            </p>
+
+            <p>
+                <a href="index.html">Visit my homepage</a>
+            </p>
+        </section>
+
+        <footer class="text-center">
+            <p>Chelsea Ochoa Mata · WDD 331R Advanced CSS</p>
+        </footer>
+    </main>
+</body>
+</html>

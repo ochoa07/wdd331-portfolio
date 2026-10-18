@@ -1,13 +1,44 @@
 :root {
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
-    --space-xl: 4rem;
+    /* Typography */
+    --font-family-sans: system-ui, -apple-system, sans-serif;
+    --font-family-mono: monospace;
+    --font-size-sm: 1.4rem;
+    --font-size-md: 1.6rem;
+    --font-size-lg: 1.8rem;
 
-    --font-body: system-ui, -apple-system, sans-serif;
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 64px;
+
+    /* Radii */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-card: 1.5rem;
+
+    /* Transitions */
+    --transition-base: 0.2s ease;
+
+    /* Icons */
+    --icon-size-sm: 24px;
+    --icon-size-md: 32px;
+
+    /* Focus */
+    --outline-width: 2px;
+
+    /* Existing names point to the new tokens */
+    --space-sm: var(--spacing-sm);
+    --space-md: var(--spacing-md);
+    --space-lg: var(--spacing-xl);
+    --space-xl: var(--spacing-2xl);
+
+    --font-body: var(--font-family-sans);
     --font-heading: Georgia, "Times New Roman", serif;
     --text-title: clamp(2.4rem, 7vw, 4.5rem);
 
-    --radius-card: 1.5rem;
-    --shadow-card: 0 12px 35px rgb(36 62 72 / 8%);
+    --shadow-card: 0 12px 35px var(--shadow-color);
 }

@@ -10,7 +10,7 @@
         135deg,
         var(--color-border),
         var(--color-bg) 65%,
-        var(--color-accent)
+        var(--color-hero-tint)
     );
 }
 

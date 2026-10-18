@@ -4,11 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chelsea Ochoa Mata | Advanced CSS Portfolio</title>
+    <script src="js/theme-preference.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
    <main>
         <header class="hero">
+            <div class="theme-toolbar">
+                <details class="theme-menu">
+                    <summary class="theme-control">
+                        <span class="visually-hidden">Color scheme</span>
+                    </summary>
+
+                    <div class="theme-extra"
+                        role="group"
+                        aria-label="Choose color scheme">
+
+                        <label class="theme-control theme-pick"
+                            data-theme-pick="light">
+                            <input name="theme-preference"
+                                type="radio"
+                                value="light">
+                            <span aria-hidden="true">&#9788;&#65039;</span>
+                            <span class="visually-hidden">Light</span>
+                        </label>
+
+                        <label class="theme-control theme-pick"
+                            data-theme-pick="system">
+                            <input name="theme-preference"
+                                type="radio"
+                                value="system"
+                                checked>
+                            <span aria-hidden="true">&#9881;&#65039;</span>
+                            <span class="visually-hidden">System default</span>
+                        </label>
+
+                        <label class="theme-control theme-pick"
+                            data-theme-pick="dark">
+                            <input name="theme-preference"
+                                type="radio"
+                                value="dark">
+                            <span aria-hidden="true">&#127766;</span>
+                            <span class="visually-hidden">Dark</span>
+                        </label>
+
+                    </div>
+                </details>
+            </div>
             <p class="eyebrow">A little of what I’m learning</p>
 
             <h1>Hi, I’m Chelsea</h1>
@@ -54,6 +96,14 @@
                     <a href="unit-2/custom-media/index.html">
                         <strong>Custom Media Queries</strong>
                         <span>Using named breakpoints for responsive styles.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="color-system.html">
+                        <strong>Tokenized Color System and Dark Mode</strong>
+                        <span>
+                            Shared color tokens and a theme choice that stays saved.
+                        </span>
                     </a>
                 </li>
 

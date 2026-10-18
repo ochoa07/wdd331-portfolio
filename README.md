@@ -17,6 +17,25 @@ The site deploys to GitHub Pages after each push to main.
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Layered Components](unit-2/layered-components/index.html)
 - [Custom Media Queries](unit-2/custom-media/index.html)
+- [Tokenized Color System and Dark Mode](color-system.html)
+
+
+## Color System and Dark Mode
+
+The homepage and color system page support light mode, dark mode,
+and a system default option.
+
+Color tokens live in css/tokens/colors.css. The accent uses oklch(),
+and color-mix() creates lighter and darker versions. Semantic tokens
+use light-dark() to provide colors for both themes.
+
+The theme toggle styles live in css/components/theme-toggle.css.
+The script in js/theme-preference.js saves the selected theme
+in localStorage so it stays when refreshing or moving between pages.
+
+Both pages load the shared css/main.css stylesheet.
+Earlier standalone demos keep their own scoped styles.
+
 
 ## CSS Organization
 
