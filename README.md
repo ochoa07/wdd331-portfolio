@@ -18,6 +18,8 @@ The site deploys to GitHub Pages after each push to main.
 - [Layered Components](unit-2/layered-components/index.html)
 - [Custom Media Queries](unit-2/custom-media/index.html)
 - [Tokenized Color System and Dark Mode](color-system.html)
+- [Visual Effects](https://ochoa07.github.io/wdd331-portfolio/unit-3/visual-effects/)
+- [Clip Path and Mask Image](https://ochoa07.github.io/wdd331-portfolio/unit-3/clip-and-mask/)
 
 
 ## Color System and Dark Mode
