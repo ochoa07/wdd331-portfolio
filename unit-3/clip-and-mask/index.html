@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip Path &amp; Mask Image — Chelsea’s Demo</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <p class="brand">Chelsea’s Demo</p>
+
+            <nav class="navigation" aria-label="Main navigation">
+                <a href="../../index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#examples">Examples</a>
+                <a href="#takeaway">Takeaway</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header id="about" class="intro">
+            <h1>Clip Path &amp; Mask Image</h1>
+            <p>Cut a shape. Create a fade. See the difference.</p>
+        </header>
+
+        <section id="examples">
+            <h2>1. Clip an element into a shape</h2>
+
+            <p>
+                Clipping hides everything outside the shape. The checkerboard
+                shows the area behind the element. Its original layout space
+                stays the same.
+            </p>
+
+            <div class="grid">
+                <div>
+                    <h3>Circle</h3>
+
+                    <div class="stage">
+                        <img
+                            class="landscape circle"
+                            alt="Illustrated mountain lake at sunset"
+                        >
+                    </div>
+
+                    <pre>clip-path: circle(45% at 50% 50%);</pre>
+                </div>
+
+                <div>
+                    <h3>Triangle</h3>
+
+                    <div class="stage">
+                        <img
+                            class="landscape triangle"
+                            alt="Illustrated mountain lake at sunset"
+                        >
+                    </div>
+
+                    <pre>clip-path: polygon(
+    50% 0%,
+    100% 100%,
+    0% 100%
+);</pre>
+                </div>
+
+                <div>
+                    <h3>Inset</h3>
+
+                    <div class="stage">
+                        <img
+                            class="landscape inset"
+                            alt="Illustrated mountain lake at sunset"
+                        >
+                    </div>
+
+                    <pre>clip-path: inset(12% 8% round 24px);</pre>
+                </div>
+            </div>
+
+            <p class="note">
+                Polygon points use x then y: 0% 0% is the top-left corner;
+                100% 100% is the bottom-right. Inset values here mean 12%
+                from top/bottom and 8% from left/right.
+            </p>
+
+            <label for="radius">
+                Change the circle radius:
+                <output id="radius-value">45%</output>
+            </label>
+            <input id="radius" type="range" min="10" max="70" value="45">
+        </section>
+
+        <section>
+            <h2>2. Animate between matching shapes</h2>
+
+            <div class="grid two">
+                <div class="stage morph-frame">
+                    <img
+                        id="morph"
+                        class="landscape morph"
+                        alt="Mountain landscape that changes from a square to a diamond"
+                    >
+                </div>
+
+                <div>
+                    <p>
+                        Hover over the image, or use the buttons. A square
+                        and diamond both use four points, so their points
+                        can move smoothly.
+                    </p>
+
+                    <button id="diamond">Toggle diamond</button>
+                    <button id="triangle">Toggle triangle (mismatch)</button>
+                    <button id="reset">Reset shape</button>
+
+                    <p>
+                        Move the pointer away from the image before using
+                        the buttons. Watch the triangle jump because it
+                        has three points.
+                    </p>
+                </div>
+            </div>
+
+            <pre>.morph {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: clip-path 1s ease;
+}
+
+.morph-frame:hover .morph {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}</pre>
+
+            <p>
+                For this basic shape transition, use the same shape function
+                and matching polygon point counts. Reduced-motion settings
+                disable this animation.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. Reveal an element with a gradient mask</h2>
+
+            <div class="grid two">
+                <div>
+                    <h3>Original</h3>
+
+                    <div class="stage">
+                        <img
+                            class="landscape"
+                            alt="Original illustrated landscape"
+                        >
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Gradient mask</h3>
+
+                    <div class="stage">
+                        <img
+                            class="landscape fade"
+                            alt="Illustrated landscape fading toward the bottom"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <pre>.fade {
+    mask-image: linear-gradient(to bottom, black 35%, transparent 100%);
+    mask-mode: alpha;
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+}</pre>
+
+            <p class="note">
+                With an alpha mask, black does NOT paint the image black.
+                Opaque black reveals it, transparent hides it, and partial
+                opacity creates the fade. Opaque white would also reveal it.
+                Luminance masks additionally use brightness.
+            </p>
+
+            <p>
+                Older WebKit browsers needed <code>-webkit-mask-image</code>.
+                Current major browsers support the standard property.
+                In DevTools, uncheck the prefixed declaration: current
+                browsers should keep the fade because the standard declaration
+                remains. The source includes prefixed versions for older browsers.
+            </p>
+        </section>
+
+        <section>
+            <h2>4. The repeating mask gotcha</h2>
+
+            <div class="grid two">
+                <div class="stage">
+                    <img
+                        id="tiles"
+                        class="landscape tiles"
+                        alt="Landscape revealed through a repeating circle mask"
+                    >
+                </div>
+
+                <div>
+                    <p>
+                        A 70px mask repeats across the image. Masks repeat
+                        by default; this is easiest to notice when the mask
+                        is smaller than the element.
+                    </p>
+
+                    <button id="fix">Fix mask size and repeat</button>
+
+                    <pre id="tile-code">mask-size: 70px 70px;
+mask-repeat: repeat;</pre>
+
+                    <p>
+                        <code>no-repeat</code> stops the tiling. Changing
+                        the size to <code>100% 100%</code> also stretches
+                        the mask to cover the element.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="takeaway" class="takeaway">
+            <h2>5. What to remember</h2>
+
+            <p>
+                Use <strong>clip-path</strong> for a defined shape, and
+                <strong>mask-image</strong> for fades or detailed transparency.
+            </p>
+
+            <p>
+                Good uses: shaped decorative images, geometric reveals,
+                and image fades. Keep important text and controls outside
+                areas you hide. Neither property makes text wrap around
+                a shape; that is a separate job for <code>shape-outside</code>.
+            </p>
+        </section>
+
+        <a
+            href="https://youtu.be/P7lEk4cjDMo"
+            class="video-button"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Watch my teaching video
+        </a>
+    </main>
+
+    <script src="src/main.js"></script>
+</body>
+</html>
