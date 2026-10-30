@@ -20,6 +20,8 @@ The site deploys to GitHub Pages after each push to main.
 - [Tokenized Color System and Dark Mode](color-system.html)
 - [Visual Effects](https://ochoa07.github.io/wdd331-portfolio/unit-3/visual-effects/)
 - [Clip Path and Mask Image](https://ochoa07.github.io/wdd331-portfolio/unit-3/clip-and-mask/)
+- [Editorial Layout](unit-4/grid-layouts/editorial.html)
+- [Responsive Card Grid](unit-4/grid-layouts/cards.html)
 
 
 ## Color System and Dark Mode
