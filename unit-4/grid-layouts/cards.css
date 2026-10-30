@@ -1,0 +1,114 @@
+/* Page styles */
+
+.articles-page {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.articles-page *,
+.articles-page *::before,
+.articles-page *::after {
+    box-sizing: border-box;
+}
+
+.articles-page > header,
+.articles-page > main {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.articles-page > header {
+    text-align: center;
+}
+
+.articles-page > header h1 {
+    margin-block: 0 var(--spacing-sm);
+    font-family: var(--font-heading);
+    font-size: var(--text-title);
+    line-height: 1.15;
+}
+
+.articles-page > header p {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+/* Responsive grid */
+
+.articles-page .card-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    grid-auto-rows: 1fr;
+    gap: var(--spacing-lg);
+}
+
+/* Cards */
+
+.articles-page .card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+/* Consistent image proportions without stretching. */
+.articles-page .card > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Let the body fill the remaining card space. */
+.articles-page .card > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    overflow-wrap: anywhere;
+}
+
+.articles-page .card h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    line-height: 1.3;
+}
+
+.articles-page .card p {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+/* Push the link to the bottom of the card. */
+.articles-page .card a {
+    align-self: flex-start;
+    margin-block-start: auto;
+    color: var(--color-link);
+    font-weight: 700;
+    text-underline-offset: 0.2em;
+}
+
+.articles-page .card a:hover {
+    color: var(--color-link-hover);
+}
+
+.articles-page .card a:focus-visible {
+    outline: var(--outline-width) solid var(--color-accent);
+    outline-offset: 4px;
+}
