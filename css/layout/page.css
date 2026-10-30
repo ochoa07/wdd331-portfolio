@@ -1,18 +1,16 @@
+/* Page spacing */
 body {
-    padding: var(--space-lg) var(--space-md);
+    margin: 0;
+    padding: clamp(1rem, 3vw, 2.5rem);
 }
 
+/* Main content width */
 main {
-    max-width: 60rem;
+    max-width: 72rem;
     margin-inline: auto;
 }
 
+/* Space between sections */
 main > * + * {
-    margin-top: var(--space-lg);
-}
-
-@media (min-width: 48rem) {
-    body {
-        padding: var(--space-xl) var(--space-lg);
-    }
+    margin-top: clamp(2rem, 5vw, 3.5rem);
 }
