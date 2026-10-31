@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspect Ratio &amp; Object Fit — Chelsea’s Demo</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="src/main.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="container">
+    <p class="brand">Chelsea’s Demo</p>
+    <nav class="navigation" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#examples">Examples</a><a href="#portfolio">Portfolio recipe</a><a href="#takeaway">Takeaway</a>
+    </nav>
+</div></header>
+<main class="container">
+    <header id="about"><h1>Aspect Ratio &amp; Object Fit</h1>
+        <p>Choose the shape. Fit the image. Control the crop.</p>
+        <p>Every example uses the same landscape illustration. Watch the round sun: stretching makes it oval.</p>
+    </header>
+    <section id="examples">
+        <h2>1. Fix a stretched image, one step at a time</h2>
+        <p>This image is inside a grid. We deliberately set a mismatched width and height to stretch it. Grid alone does not automatically distort images.</p>
+        <div class="grid two">
+            <article><div class="stage"><img id="step-image" class="step-image" src="src/landscape.svg" alt="Mountain lake with a round sun and a small cabin"></div><h3>A project card</h3></article>
+            <div><p>First change the box’s shape. Then fix how the picture fits.</p>
+                <button type="button" data-step="0" aria-pressed="true">1. Show stretching</button>
+                <button type="button" data-step="1" aria-pressed="false">2. Add aspect-ratio</button>
+                <button type="button" data-step="2" aria-pressed="false">3. Add cover</button>
+                <p id="step-note" aria-live="polite">The fixed height and fill value stretch the picture.</p>
+            </div>
+        </div>
+        <pre id="step-code"></pre>
+        <p class="note">16 / 9 means 16 units wide for every 9 units tall. At least one dimension must be automatic for aspect-ratio to calculate it. Unlike a fixed height, the ratio adapts as the width changes.</p>
+        <p>Older layouts often used padding-top: 56.25% and an absolutely positioned child to create a 16:9 box. Today, aspect-ratio expresses the shape directly.</p>
+    </section>
+    <section>
+        <h2>2. Compare cover, contain, and fill</h2>
+        <p>Same image. Same box. Different ways to fit the picture. The checkerboard makes empty space visible.</p>
+        <div class="grid">
+<article><h3>cover</h3><div class="stage"><img class="fit-image" style="object-fit: cover" src="src/landscape.svg" alt="Same mountain illustration using cover"></div><p>Keeps proportions, fills the box, and crops the sides.</p><pre>aspect-ratio: 1;
+object-fit: cover;</pre></article><article><h3>contain</h3><div class="stage"><img class="fit-image" style="object-fit: contain" src="src/landscape.svg" alt="Same mountain illustration using contain"></div><p>Keeps proportions and shows the whole image, with empty space.</p><pre>aspect-ratio: 1;
+object-fit: contain;</pre></article><article><h3>fill</h3><div class="stage"><img class="fit-image" style="object-fit: fill" src="src/landscape.svg" alt="Same mountain illustration using fill"></div><p>Fills the box by stretching the image. Look at the sun!</p><pre>aspect-ratio: 1;
+object-fit: fill;</pre></article>
+        </div>
+        <div class="controls"><label for="fit">Try all five values<select id="fit"><option>cover</option><option>contain</option><option>fill</option><option>none</option><option>scale-down</option></select></label>
+        <label for="ratio">Choose a shape<select id="ratio"><option value="16 / 9">16 / 9 — wide</option><option value="4 / 3">4 / 3 — classic</option><option value="1">1 / 1 — square</option><option value="2 / 3">2 / 3 — portrait</option></select></label></div>
+        <div class="stage"><img id="play-image" class="fit-image" src="src/landscape.svg" alt="Interactive landscape fitting example"></div>
+        <pre id="play-code"></pre>
+        <p><code>none</code> keeps the image at its natural size (800 × 500 here); the image box clips anything outside it. <code>scale-down</code> chooses the smaller result of none and contain, so it never enlarges the image.</p>
+    </section>
+    <section>
+        <h2>3. Choose which part stays visible</h2>
+        <div class="grid two">
+            <div class="stage"><img id="position-image" class="position-image" src="src/landscape.svg" alt="Landscape cropped into a square; change the crop to reveal the tree or cabin"></div>
+            <div><p>Cover crops this wide image inside a square. Move the picture to keep the tree on the left or the cabin on the right.</p>
+                <label for="position">Object position<select id="position"><option value="center">Center</option><option value="left center">Left — tree</option><option value="right center">Right — cabin</option></select></label>
+                <pre id="position-code"></pre>
+                <p class="note">Position only creates a visible change along an axis with extra image content or empty space. For a tall portrait cropped into a square, try center top to keep the face visible.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>4. Keep a hero box proportional</h2>
+        <p>Move the slider or resize the browser. The container calculates its height from its width.</p>
+        <label for="hero-width">Container width: <output id="width-value">100%</output></label>
+        <input id="hero-width" type="range" min="40" max="100" value="100">
+        <div id="hero-wrap" class="hero-wrap"><div class="hero stage"><img src="src/landscape.svg" alt="Wide mountain lake hero illustration"></div></div>
+        <pre>.hero {
+    aspect-ratio: 16 / 9;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}</pre>
+        <p>The same ratio container can hold a video or iframe. Give the child width: 100% and height: 100%. Object-fit works on images and videos; it does not control the content inside an iframe.</p>
+    </section>
+    <section id="portfolio">
+        <h2>5. Use consistent thumbnails in a card grid</h2>
+        <p>These cards use CSS Grid. Each image keeps a 16:9 shape as the columns resize.</p>
+        <div class="grid">
+<article class="card"><img src="src/landscape.svg" alt="Landscape thumbnail for Project One"><h3>Project One</h3><p>A consistent thumbnail without stretching.</p></article><article class="card"><img src="src/landscape.svg" alt="Landscape thumbnail for Project Two"><h3>Project Two</h3><p>A consistent thumbnail without stretching.</p></article><article class="card"><img src="src/landscape.svg" alt="Landscape thumbnail for Project Three"><h3>Project Three</h3><p>A consistent thumbnail without stretching.</p></article></div>
+        <pre>.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}</pre>
+        <p class="note">For the assignment, apply this pattern to at least one actual image or video on your portfolio inside Grid or Flexbox. These sample cards demonstrate the pattern; they do not replace that portfolio update.</p>
+    </section>
+    <section id="takeaway"><h2>6. What to remember</h2>
+        <p><strong>aspect-ratio:</strong> the shape of the box.</p>
+        <p><strong>object-fit:</strong> how the picture fits inside the box.</p>
+        <p><strong>object-position:</strong> where the picture sits inside the box.</p>
+        <p>Use cover for thumbnails, contain when the whole picture matters, and fill only when stretching is intended.</p>
+    </section>
+    <footer><a href="#about">Back to top</a><p><small>References: <a href="https://www.w3.org/TR/css-sizing-4/#aspect-ratio">CSS aspect-ratio specification</a> · <a href="https://www.w3.org/TR/css-images-3/#the-object-fit">CSS object-fit specification</a></small></p></footer>
+</main>
+</body>
+</html>
