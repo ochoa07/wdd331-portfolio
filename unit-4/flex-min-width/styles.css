@@ -1,0 +1,139 @@
+/* PAGE STYLING — the teaching examples begin below. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8f6fc;
+  color: #292538;
+  font: 18px/1.6 system-ui, sans-serif;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 48px 24px;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.15;
+  margin: 12px 0;
+}
+
+h2 {
+  line-height: 1.3;
+}
+
+.eyebrow {
+  color: #59417e;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.intro {
+  max-width: 60ch;
+  color: #655c76;
+}
+
+section {
+  background: white;
+  padding: 28px;
+  border: 1px solid #e0d9ec;
+  border-radius: 18px;
+  margin: 28px 0;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+.example h3 {
+  margin-bottom: .45rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #292538;
+  color: #f4eafe;
+  padding: 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.examples > pre {
+  margin: 0;
+}
+
+label {
+  display: block;
+  font-weight: 650;
+  margin-bottom: .6rem;
+}
+
+input {
+  accent-color: #694b92;
+}
+
+input:focus-visible,
+.photos:focus-visible {
+  outline: 3px solid #c07e13;
+  outline-offset: 3px;
+}
+
+/* Keep the overflow visible within each checkerboard preview. */
+.stage {
+  overflow: auto;
+  background: repeating-conic-gradient(
+    #e5dfed 0% 25%,
+    #f5f1fa 0% 50%
+  ) 0 / 24px 24px;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+@media (max-width: 700px) {
+  .examples {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  section {
+    padding: 20px;
+  }
+}
+
+/* TEACHING EXAMPLES */
+.frame { outline: 2px dashed #8864af; outline-offset: -2px; }
+.gallery { display: flex; }
+.sidebar { flex: 0 0 5rem; padding: .65rem; background: #eee7fa; font-weight: 650; }
+.content { flex: 1; padding: .65rem; background: #fbfaff; }
+.filename { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.landscape { display: block; width: 100%; height: auto; border-radius: .35rem; margin-bottom: .4rem; }
+.flex-example:has(input:checked) .content { min-width: 0; }
+
+.panel-stage { height: 13rem; }
+.panel { display: flex; flex-direction: column; height: 10rem; background: #fbfaff; }
+.panel-title { flex: none; padding: .5rem .65rem; background: #eee7fa; font-weight: 650; }
+.panel-body { flex: 1; }
+.photos { height: 100%; overflow-y: auto; padding: .65rem; }
+.photos .landscape { height: 4.5rem; }
+.column-example:has(input:checked) .panel-body { min-height: 0; }
+
+.grid-gallery { display: grid; grid-template-columns: 5rem 1fr; }
+.grid-example:has(input:checked) .content { min-width: 0; }
+
+.padded-card { box-sizing: content-box; width: 100%; padding: 1.1rem; border: 3px solid #8864af; background: #fbfaff; }
+.padded-card .landscape { height: 5rem; }
+.box-example:has(input:checked) .padded-card { box-sizing: border-box; }

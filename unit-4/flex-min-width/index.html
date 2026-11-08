@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When CSS Layouts Won’t Shrink | WDD 331R</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <symbol id="sunset" viewBox="0 0 300 105" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="sky" x2="0%" y2="100%" gradientUnits="objectBoundingBox">
+          <stop stop-color="#735aaf"/>
+          <stop offset="1" stop-color="#f9a999"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#sky)" d="M0 0h300v105H0z"/>
+      <circle cx="215" cy="43" r="21" fill="#ffdaab"/>
+      <path fill="#725286" d="m0 83 48-33 38 21 43-46 60 59 32-17 79 15v23H0z"/>
+      <path fill="#3d355a" d="m0 93 70-25 45 22 45-15 55 16 52-16 33 12v18H0z"/>
+    </symbol>
+  </svg>
+  <main>
+    <header>
+      <p class="eyebrow">WDD 331R · TEACHING DEMO</p>
+      <h1>When CSS layouts won’t shrink</h1>
+      
+    </header>
+
+    <section>
+      <h2>01 · A photo gallery in a flex row</h2>
+      <p>The long filename gives the content area an automatic minimum width. Inspect <code>.content</code> in DevTools and look for <code>min-width: auto</code> in the Computed panel.</p>
+      <div class="examples">
+        <div class="example">
+          <h3>Before</h3>
+          <div class="stage">
+            <div class="gallery frame">
+              <div class="sidebar">Albums</div>
+              <div class="content">
+                <svg class="landscape" viewBox="0 0 300 105" role="img" aria-label="Sunset over mountains"><use href="#sunset"/></svg>
+                <span class="filename">tetons-sunset-original-full-resolution-panorama-november.jpg</span>
+              </div>
+            </div>
+          </div>
+          <pre><code>.gallery { display: flex; }
+.content { flex: 1; }</code></pre>
+        </div>
+        <div class="example flex-example">
+          <h3>Try the fix</h3>
+          <label><input type="checkbox" checked> Apply <code>min-width: 0</code></label>
+          <div class="stage">
+            <div class="gallery frame">
+              <div class="sidebar">Albums</div>
+              <div class="content">
+                <svg class="landscape" viewBox="0 0 300 105" role="img" aria-label="Sunset over mountains"><use href="#sunset"/></svg>
+                <span class="filename">tetons-sunset-original-full-resolution-panorama-november.jpg</span>
+              </div>
+            </div>
+          </div>
+          <pre><code>.content { flex: 1; min-width: 0; }
+.filename {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}</code></pre>
+        </div>
+      </div>
+      <p><code>min-width: 0</code> lets the flex item get narrower. The rules on <code>.filename</code> show the ellipsis once the space gets tight.</p>
+    </section>
+
+    <section class="column-example">
+      <h2>02 · A photo panel in a flex column</h2>
+      <p>The panel has a fixed height. Toggle the fix and watch where the photos scroll.</p>
+      <label><input type="checkbox"> Apply <code>min-height: 0</code></label>
+      <div class="examples">
+        <div class="stage panel-stage">
+          <div class="panel frame">
+            <div class="panel-title">Weekend gallery</div>
+            <div class="panel-body">
+              <div class="photos" tabindex="0" role="region" aria-label="Scrollable sunset photos">
+                <svg class="landscape" role="img" aria-label="Mountain sunset"><use href="#sunset"/></svg>
+                <svg class="landscape" role="img" aria-label="Mountain sunset"><use href="#sunset"/></svg>
+                <svg class="landscape" role="img" aria-label="Mountain sunset"><use href="#sunset"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pre><code>.panel {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+}
+.panel-body { flex: 1; min-height: 0; }
+.photos { height: 100%; overflow-y: auto; }</code></pre>
+      </div>
+      <p>The flex item is <code>.panel-body</code>. Its child, <code>.photos</code>, handles scrolling.</p>
+    </section>
+
+    <section class="grid-example">
+      <h2>03 · The same gallery in Grid</h2>
+      <p>A <code>1fr</code> track has an automatic minimum. Here the long filename can stretch the second column. The minimum depends on how the grid tracks are defined and which ones the item spans.</p>
+      <label><input type="checkbox"> Apply <code>min-width: 0</code></label>
+      <div class="examples">
+        <div class="stage">
+          <div class="grid-gallery frame">
+            <div class="sidebar">Albums</div>
+            <div class="content">
+              <svg class="landscape" viewBox="0 0 300 105" role="img" aria-label="Sunset over mountains"><use href="#sunset"/></svg>
+              <span class="filename">tetons-sunset-original-full-resolution-panorama-november.jpg</span>
+            </div>
+          </div>
+        </div>
+        <pre><code>.grid-gallery {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+}
+.content { min-width: 0; }</code></pre>
+      </div>
+    </section>
+
+    <section class="box-example">
+      <h2>04 · Padding on a full-width photo card</h2>
+      <p>With <code>content-box</code>, the card takes up 100% of the parent’s width, then adds padding and borders. With <code>border-box</code>, those fit inside the declared width.</p>
+      <label><input type="checkbox"> Apply <code>border-box</code></label>
+      <div class="examples">
+        <div class="stage">
+          <div class="frame">
+            <div class="padded-card">
+              <svg class="landscape" role="img" aria-label="Sunset over mountains"><use href="#sunset"/></svg>
+              Sunset photo card
+            </div>
+          </div>
+        </div>
+        <pre><code>.padded-card {
+  width: 100%;
+  padding: 1.1rem;
+  border: 3px solid;
+  box-sizing: border-box;
+}</code></pre>
+      </div>
+      <p>Use the reset below for consistent box sizing across a project. Apply <code>min-width: 0</code> to individual items that need to shrink past their automatic minimum.</p>
+      <pre><code>*, *::before, *::after {
+  box-sizing: border-box;
+}</code></pre>
+    </section>
+  </main>
+</body>
+</html>
