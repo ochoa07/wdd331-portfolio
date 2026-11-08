@@ -22,6 +22,9 @@ The site deploys to GitHub Pages after each push to main.
 - [Clip Path and Mask Image](https://ochoa07.github.io/wdd331-portfolio/unit-3/clip-and-mask/)
 - [Editorial Layout](unit-4/grid-layouts/editorial.html)
 - [Responsive Card Grid](unit-4/grid-layouts/cards.html)
+- [Container Query Demo](unit-4/advanced/container-demo.html)
+- [Sticky Positioning Demo](unit-4/advanced/sticky-demo.html)
+- [`min-width: 0` on Flex Items](unit-4/flex-min-width/index.html)
 
 
 ## Color System and Dark Mode

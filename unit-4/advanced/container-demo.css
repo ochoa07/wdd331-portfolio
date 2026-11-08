@@ -1,0 +1,91 @@
+.container-page {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.container-page .demo-header,
+.container-page .demo-layout {
+    box-sizing: border-box;
+    max-inline-size: 72rem;
+    margin-inline: auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.container-page .demo-header {
+    text-align: center;
+}
+
+.container-page .demo-header h1 {
+    margin: 0 0 var(--spacing-sm);
+    font-family: var(--font-heading);
+    font-size: var(--text-title);
+}
+
+.container-page .demo-header p,
+.container-page .feature-card p {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.container-page .demo-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.container-page .demo-placement {
+    container-name: feature-placement;
+    container-type: inline-size;
+    min-inline-size: 0;
+}
+
+.container-page .demo-placement--narrow {
+    flex: 0 1 17rem;
+}
+
+.container-page .demo-placement--wide {
+    flex: 1 1 30rem;
+}
+
+.container-page .demo-placement h2 {
+    margin: 0 0 var(--spacing-sm);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+}
+
+.container-page .feature-card {
+    display: grid;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+.container-page .feature-card img {
+    display: block;
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.container-page .feature-card-content {
+    padding: var(--spacing-lg);
+}
+
+.container-page .feature-card h3 {
+    margin: 0 0 var(--spacing-sm);
+    font-family: var(--font-heading);
+}
+
+/* Switch layouts when the card's wrapper has enough space. */
+@container feature-placement (min-width: 30rem) {
+    .container-page .feature-card {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+    }
+}
