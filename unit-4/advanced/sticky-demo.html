@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Positioning Demo</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="sticky-demo.css">
+</head>
+<body class="sticky-page">
+    <header class="demo-intro">
+        <h1>Sticky Positioning Demo</h1>
+        <p>Scroll through the gallery and watch what happens to its heading.</p>
+    </header>
+
+    <main class="demo-main">
+        <section class="sticky-section" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading" class="sticky-heading">Sunset Gallery</h2>
+
+            <div class="sunset-gallery">
+                <div class="photo-frame">
+                    <img src="../grid-layouts/images/article-1.jpg" alt="Sunset photograph 1">
+                </div>
+                <div class="photo-frame">
+                    <img src="../grid-layouts/images/article-2.jpg" alt="Sunset photograph 2">
+                </div>
+                <div class="photo-frame">
+                    <img src="../grid-layouts/images/article-3.jpg" alt="Sunset photograph 3">
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-end">
+            <h2>End of the Gallery</h2>
+            <p>The sticky heading scrolls away once its section ends.</p>
+        </section>
+    </main>
+</body>
+</html>
