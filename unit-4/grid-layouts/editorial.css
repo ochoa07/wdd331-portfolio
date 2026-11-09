@@ -72,13 +72,13 @@
     margin: 0 0 var(--spacing-sm);
     font-family: var(--font-heading);
     font-size: var(--text-title);
-    line-height: 1.15;
+    line-height: var(--line-height-heading-lg);
 }
 
 .editorial-page article h2 {
     margin-block: var(--spacing-xl) var(--spacing-sm);
     font-family: var(--font-heading);
-    line-height: 1.3;
+    line-height: var(--line-height-heading-md);
 }
 
 .editorial-page article p {
@@ -87,7 +87,8 @@
 
 .editorial-page .byline {
     color: var(--color-text-muted);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-caption);
 }
 
 .editorial-page blockquote {
@@ -119,8 +120,8 @@
 .editorial-page aside h2 {
     margin-block: 0 var(--spacing-md);
     font-family: var(--font-heading);
-    font-size: var(--font-size-lg);
-    line-height: 1.3;
+    font-size: var(--font-size-heading-sm);
+    line-height: var(--line-height-heading-sm);
 }
 
 .editorial-page aside ul {
@@ -146,7 +147,8 @@
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-caption);
 }
 
 /* Links and keyboard focus */
