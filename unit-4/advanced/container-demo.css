@@ -54,7 +54,8 @@
 .container-page .demo-placement h2 {
     margin: 0 0 var(--spacing-sm);
     font-family: var(--font-heading);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-heading-sm);
+    line-height: var(--line-height-heading-sm);
 }
 
 .container-page .feature-card {

@@ -11,12 +11,14 @@
 }
 
 .hero h1 {
-    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-size: var(--font-size-display);
+    line-height: var(--line-height-display);
 }
 
 .hero .eyebrow {
     color: var(--color-primary);
-    font-size: 0.8rem;
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-caption);
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -76,16 +78,16 @@
 .assignment-list strong {
     display: block;
     color: var(--color-text);
-    font-size: 1.05rem;
-    line-height: 1.4;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
 }
 
 .assignment-list span {
     display: block;
     margin-top: 0.75rem;
     color: var(--color-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
 }
 
 /* Tablet: two columns */

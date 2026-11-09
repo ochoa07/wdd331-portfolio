@@ -44,6 +44,17 @@ Both pages load the shared css/main.css stylesheet.
 Earlier standalone demos keep their own scoped styles.
 
 
+## Typography
+
+My typography tokens live in `css/tokens/variables.css`. I used a major
+third scale (1.25) and `clamp()` so headings grow smoothly between
+320px and 1120px at the default root font size. The shared styles use
+role tokens for body text, captions, headings, and display titles.
+
+I load Outfit for headings in `css/main.css` with `display=swap`.
+A system font shows while Outfit loads.
+
+
 ## CSS Organization
 
 The shared CSS uses five layers in this order:

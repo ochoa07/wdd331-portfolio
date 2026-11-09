@@ -1,15 +1,39 @@
 :root {
-    /* Typography */
-    --font-family-sans: Arial, Helvetica, sans-serif;
+    /* Typography · major third scale (1.25) */
+    --font-size-xs: 0.64rem;
+    --font-size-sm: 0.8rem;
+    --font-size-md: 1rem;
+    --font-size-lg: clamp(1.25rem, 1.125rem + 0.625vw, 1.5625rem);
+    --font-size-xl: clamp(1.5625rem, 1.40625rem + 0.78125vw, 1.953125rem);
+    --font-size-2xl: clamp(1.953125rem, 1.7578125rem + 0.9765625vw, 2.44140625rem);
+    --font-size-3xl: clamp(2.44140625rem, 2.197265625rem + 1.220703125vw, 3.0517578125rem);
+
+    /* Size roles */
+    --font-size-caption: var(--font-size-sm);
+    --font-size-body: var(--font-size-md);
+    --font-size-heading-sm: var(--font-size-lg);
+    --font-size-heading-md: var(--font-size-xl);
+    --font-size-heading-lg: var(--font-size-2xl);
+    --font-size-display: var(--font-size-3xl);
+
+    /* Line-height roles */
+    --line-height-caption: 1.4;
+    --line-height-body: 1.6;
+    --line-height-heading-sm: 1.3;
+    --line-height-heading-md: 1.25;
+    --line-height-heading-lg: 1.15;
+    --line-height-display: 1.1;
+
+    /* Font families */
+    --font-family-sans: system-ui, Arial, Helvetica, sans-serif;
     --font-family-mono: monospace;
+    --font-family-body: var(--font-family-sans);
+    --font-family-heading: "Outfit", var(--font-family-sans);
 
-    --font-size-sm: 1.4rem;
-    --font-size-md: 1.6rem;
-    --font-size-lg: 1.8rem;
-
-    --font-body: var(--font-family-sans);
-    --font-heading: var(--font-family-sans);
-    --text-title: clamp(2.4rem, 6vw, 3.75rem);
+    /* Existing names used by earlier pages */
+    --font-body: var(--font-family-body);
+    --font-heading: var(--font-family-heading);
+    --text-title: var(--font-size-heading-lg);
 
     /* Spacing */
     --spacing-xs: 4px;
