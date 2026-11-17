@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Chelsea Ochoa Mata</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="contact-page">
+    <nav class="page-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+
+    <main class="contact">
+        <header>
+            <h1>Contact Me</h1>
+            <p>
+                Have a question or want to work together?
+                Leave a message below.
+            </p>
+            <p id="form-note">
+                This is a practice form. Messages are not sent.
+            </p>
+        </header>
+
+        <form class="contact-form" aria-describedby="form-note">
+            <div class="form-field">
+                <label for="name">Name (required)</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required>
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email (required)</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required>
+            </div>
+
+            <div class="form-field">
+                <label for="message">Message (required)</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required></textarea>
+            </div>
+
+            <div class="checkbox-field">
+                <input
+                    type="checkbox"
+                    id="updates"
+                    name="updates">
+                <label for="updates">
+                    I’d like to receive project updates.
+                </label>
+            </div>
+
+            <button type="submit">Send Message</button>
+            <p id="form-status" role="status"></p>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <p>Chelsea Ochoa Mata · WDD 331R Advanced CSS</p>
+    </footer>
+
+    <script>
+        const form = document.querySelector(".contact-form");
+        const status = document.querySelector("#form-status");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            status.textContent =
+                "Practice form complete. Your message was not sent.";
+        });
+    </script>
+</body>
+</html>

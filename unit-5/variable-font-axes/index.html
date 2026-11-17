@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variable Font Axes | Chelsea’s Demo</title>
+  <link rel="stylesheet" href="src/styles.css">
+  <script src="src/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="brand">Chelsea’s Demo</p>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#examples">Examples</a>
+        <a href="#takeaway">Takeaway</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <header id="about" class="intro">
+      <h1>Variable Font Axes</h1>
+      <p>One font file can hold a range of styles. An axis is a setting you can adjust, like the thickness of the letters.</p>
+    </header>
+
+    <section id="examples">
+      <h2>One file, three weights</h2>
+      <p>All three samples use Recursive. The number controls the thickness of the letters.</p>
+      <div class="grid">
+        <article><h3>Light</h3><p class="sample light">Good type</p><code>font-weight: 300;</code></article>
+        <article><h3>Regular</h3><p class="sample regular">Good type</p><code>font-weight: 400;</code></article>
+        <article><h3>Heavy</h3><p class="sample heavy">Good type</p><code>font-weight: 850;</code></article>
+      </div>
+      <p>In <code>@font-face</code>, the range tells the browser which weights the file can provide.</p>
+      <pre><code>@font-face {
+  font-family: "Recursive";
+  src: url("recursive.woff2") format("woff2-variations");
+  font-weight: 300 1000;
+  font-display: swap;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Change the weight live</h2>
+      <p>Move the slider or use the arrow keys. Try 637 to see a weight between the usual presets.</p>
+      <label for="weight">Font weight</label>
+      <input id="weight" type="range" min="300" max="1000" value="400">
+      <p id="weight-sample" class="sample stage regular">Typography in motion</p>
+      <pre><code>font-weight: <output id="weight-value" for="weight">400</output>;</code></pre>
+    </section>
+
+    <section>
+      <h2>Try two custom axes</h2>
+      <p><code>MONO</code> gives every letter the same width. <code>CASL</code> makes the letter shapes more casual.</p>
+      <div class="controls" role="group" aria-label="Custom axis examples">
+        <button type="button" data-settings='"MONO" 1, "CASL" 0' aria-pressed="true">Monospace</button>
+        <button type="button" data-settings='"CASL" 1' aria-pressed="false">Casual only</button>
+        <button type="button" data-settings='"MONO" 1, "CASL" 1' aria-pressed="false">Both</button>
+      </div>
+      <p id="custom-sample" class="sample stage">Make space for good type.</p>
+      <pre><code>font-variation-settings: <span id="custom-value">"MONO" 1, "CASL" 0</span>;</code></pre>
+      <p>Click <strong>Monospace</strong>, then <strong>Casual only</strong>. The new declaration replaces the whole list, so <code>MONO</code> returns to its default. Click <strong>Both</strong> to keep both settings.</p>
+    </section>
+
+    <section>
+      <h2>Animate a weight change</h2>
+      <p>Hover over the text or focus it with Tab. The browser redraws the letter shapes during the transition, so this one lasts 250 ms. With reduced motion enabled, the weight changes instantly.</p>
+      <p class="sample stage animated" tabindex="0">Light to bold</p>
+      <pre><code>.animated {
+  font-weight: 400;
+  transition: font-weight 250ms ease;
+}
+.animated:is(:hover, :focus-visible) {
+  font-weight: 800;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animated { transition: none; }
+}</code></pre>
+    </section>
+
+    <section id="takeaway">
+      <h2>Which CSS property should I use?</h2>
+      <p>Use the dedicated CSS property for a registered axis when your font supports it. Use <code>font-variation-settings</code> for custom axes.</p>
+      <ul>
+        <li>Weight (<code>wght</code>) uses <code>font-weight</code>.</li>
+        <li>Width (<code>wdth</code>) uses <code>font-stretch</code>.</li>
+        <li>Slant (<code>slnt</code>) uses <code>font-style: oblique</code> with an angle.</li>
+        <li>Italic (<code>ital</code>) uses <code>font-style: italic</code>.</li>
+        <li>Optical size (<code>opsz</code>) uses <code>font-optical-sizing</code>.</li>
+      </ul>
+      <p>Compare actual file sizes when choosing a font. One variable file can save downloads when you need several weights.</p>
+    </section>
+  </main>
+</body>
+</html>

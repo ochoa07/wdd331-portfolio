@@ -1,6 +1,5 @@
 :root {
     /* Typography · major third scale (1.25) */
-    --font-size-xs: 0.64rem;
     --font-size-sm: 0.8rem;
     --font-size-md: 1rem;
     --font-size-lg: clamp(1.25rem, 1.125rem + 0.625vw, 1.5625rem);
@@ -26,14 +25,9 @@
 
     /* Font families */
     --font-family-sans: system-ui, Arial, Helvetica, sans-serif;
-    --font-family-mono: monospace;
     --font-family-body: var(--font-family-sans);
     --font-family-heading: "Outfit", var(--font-family-sans);
 
-    /* Existing names used by earlier pages */
-    --font-body: var(--font-family-body);
-    --font-heading: var(--font-family-heading);
-    --text-title: var(--font-size-heading-lg);
 
     /* Spacing */
     --spacing-xs: 4px;
@@ -52,7 +46,6 @@
     /* Rounded corners */
     --radius-sm: 4px;
     --radius-md: 6px;
-    --radius-lg: 8px;
     --radius-card: 0.75rem;
 
     /* Transitions */

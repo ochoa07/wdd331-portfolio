@@ -2,7 +2,7 @@
     margin: 0;
     background: var(--color-bg);
     color: var(--color-text);
-    font-family: var(--font-body);
+    font-family: var(--font-family-body);
     line-height: 1.6;
 }
 
@@ -22,11 +22,11 @@
 .sticky-page h1,
 .sticky-page h2 {
     margin: 0;
-    font-family: var(--font-heading);
+    font-family: var(--font-family-heading);
 }
 
 .sticky-page .demo-intro h1 {
-    font-size: var(--text-title);
+    font-size: var(--font-size-heading-lg);
     line-height: 1.15;
 }
 

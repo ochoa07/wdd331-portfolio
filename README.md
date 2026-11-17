@@ -25,6 +25,8 @@ The site deploys to GitHub Pages after each push to main.
 - [Container Query Demo](unit-4/advanced/container-demo.html)
 - [Sticky Positioning Demo](unit-4/advanced/sticky-demo.html)
 - [`min-width: 0` on Flex Items](unit-4/flex-min-width/index.html)
+- [Resume](resume.html)
+- [Contact](contact.html)
 
 
 ## Color System and Dark Mode
@@ -104,3 +106,21 @@ The GitHub Actions workflow copies the repository to that branch.
 The generated dist/styles.css file will committed as proof
 that I ran the build tool for the Architecture and Build assignment.
 The homepage continues to use css/main.css.
+
+## Resume, Print Styles, and Contact Form
+
+I added a resume page and a practice contact form.
+Both pages use my existing typography and color tokens.
+
+The resume has a separate print stylesheet in `css/print.css`.
+It hides navigation and the footer, uses print font sizes,
+shows link URLs, and keeps experience entries together.
+It also sets orphans and widows to prevent isolated lines.
+
+The contact form includes labeled name, email, and message
+fields, plus a checkbox using the purple accent color.
+The textarea uses `field-sizing: content` with minimum
+and maximum heights. The form does not send messages.
+
+I removed unused tokens and replaced older typography
+token names with the current naming convention.
