@@ -16,21 +16,11 @@
         black
     );
 
-    --seed-link: var(--seed-accent);
-    --seed-link-hover: var(--seed-accent-hover);
 
     /* Borders */
     --seed-border: #ded9e8;
     --seed-border-strong: #a99abc;
 
-    /* Lighter and darker purple shades */
-    --accent-200: color-mix(in oklch, var(--seed-accent) 30%, white);
-    --accent-300: color-mix(in oklch, var(--seed-accent) 50%, white);
-    --accent-400: color-mix(in oklch, var(--seed-accent) 75%, white);
-    --accent-500: var(--seed-accent);
-    --accent-600: color-mix(in oklch, var(--seed-accent) 80%, black);
-    --accent-700: color-mix(in oklch, var(--seed-accent) 60%, black);
-    --accent-800: color-mix(in oklch, var(--seed-accent) 40%, black);
 }
 
 /* User chooses dark mode */
@@ -132,7 +122,6 @@ html {
     );
 
     --shadow-sm: 0 1px 2px var(--shadow-color);
-    --shadow-md: 0 3px 10px var(--shadow-color);
 
     /* Keep existing styles working */
     --color-muted: var(--color-text-muted);
