@@ -88,7 +88,7 @@ html {
     --color-hero-tint: light-dark(#ece6f5, #30263e);
 
     /* Header and theme controls */
-    --header-bg: light-dark(#ece6f5, #30263e);
+    --header-bg: var(--color-hero-tint);
     --header-text: var(--color-text);
 
     --theme-toggle-bg: color-mix(
